@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: SITE_CONFIG.siteName,
   description:
-    "San Francisco purchase-loan guidance, buying power estimate, and direct support from loan officer William Zhang at Equity Smart Home Loans.",
+    "San Francisco purchase-loan guidance, buying power estimate, and direct support from loan officer William Zhang at 5A Mortgage.",
 };
 
 export default function RootLayout({

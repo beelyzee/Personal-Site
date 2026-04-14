@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   siteName: "San Francisco Home Loans | William Zhang",
-  companyName: "Equity Smart Home Loans",
+  companyName: "5A Mortgage",
   loanOfficerName: "William Zhang",
   loanOfficerFirstName: "William",
   phoneNumber: "PHONE_NUMBER",
@@ -33,4 +33,3 @@ export const NAV_ITEMS = [
   { href: "/resources", label: "Resources" },
   { href: "/contact", label: "Contact" },
 ] as const;
-

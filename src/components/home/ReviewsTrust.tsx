@@ -11,11 +11,11 @@ export default function ReviewsTrust() {
       id="reviews"
       eyebrow="Reviews and Trust"
       title="Trusted client feedback and strong review history"
-      description="See client reviews for Equity Smart Home Loans through external review sources."
+      description="See client reviews for 5A Mortgage through external review sources."
     >
       <Card className="max-w-3xl">
         <CardHeader>
-          <CardTitle>See client reviews for Equity Smart Home Loans</CardTitle>
+          <CardTitle>See client reviews for 5A Mortgage</CardTitle>
         </CardHeader>
         <CardContent className="space-y-5">
           <p className="text-sm leading-7 text-[#5b5b5b]">
@@ -38,4 +38,3 @@ export default function ReviewsTrust() {
     </Section>
   );
 }
-

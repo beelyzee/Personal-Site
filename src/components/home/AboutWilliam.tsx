@@ -12,8 +12,8 @@ export default function AboutWilliam() {
       <Card className="max-w-4xl">
         <CardContent className="space-y-5 pt-6">
           <p className="text-base leading-8 text-[#383838]">
-            William Zhang is a San Francisco-based loan officer at Equity Smart Home Loans. He
-            graduated from UCLA with degrees in Computer Science and Business Economics.
+            William Zhang is a San Francisco-based loan officer at 5A Mortgage. He graduated from
+            UCLA with degrees in Computer Science and Business Economics.
           </p>
           <p className="text-base leading-8 text-[#383838]">
             He brings a local, analytical, and client-focused approach to helping buyers navigate
@@ -28,4 +28,3 @@ export default function AboutWilliam() {
     </Section>
   );
 }
-
