@@ -4,7 +4,19 @@ import { NextRequest, NextResponse } from "next/server";
 import { getSupabaseEnv } from "@/lib/supabase/config";
 
 export async function updateSession(request: NextRequest) {
-  const { supabaseUrl, supabasePublishableKey } = getSupabaseEnv();
+  let supabaseUrl: string;
+  let supabasePublishableKey: string;
+
+  try {
+    ({ supabaseUrl, supabasePublishableKey } = getSupabaseEnv());
+  } catch {
+    // Keep the site available even when Supabase env vars are not configured.
+    return NextResponse.next({
+      request: {
+        headers: request.headers,
+      },
+    });
+  }
 
   let response = NextResponse.next({
     request: {
@@ -34,4 +46,3 @@ export async function updateSession(request: NextRequest) {
   await supabase.auth.getUser();
   return response;
 }
-
