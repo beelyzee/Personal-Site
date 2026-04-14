@@ -4,19 +4,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const REASONS = [
   {
     title: "San Francisco Local Focus",
-    body: "Guidance tailored to local neighborhoods, common property types, and buyer timing in SF.",
+    body: "Strategy shaped for SF neighborhoods, timelines, and offer pace.",
   },
   {
     title: "Direct Communication",
-    body: "You work directly with William for fast updates, clean documentation, and clear next steps.",
+    body: "You work directly with William for fast, clear updates.",
   },
   {
-    title: "Clear Guidance for Buyers",
-    body: "Understand what you can afford, what to prepare, and how to stay competitive without confusion.",
-  },
-  {
-    title: "Tech-Forward and Detail-Oriented",
-    body: "Analytical support from someone with UCLA Computer Science and Business Economics training.",
+    title: "Analytical and Practical",
+    body: "Clear numbers and practical steps from estimate to preapproval review.",
   },
 ] as const;
 
@@ -25,11 +21,11 @@ export default function WhyWilliam() {
     <Section
       id="why-william"
       eyebrow="Why Work With William"
-      title="A local, analytical partner for your San Francisco purchase loan"
-      description="Simple guidance, responsive communication, and numbers you can trust."
+      title="Simple, trusted guidance"
+      description="Built for San Francisco buyers who want clarity and speed."
       className="bg-white/60"
     >
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-3">
         {REASONS.map((reason) => (
           <Card key={reason.title}>
             <CardHeader>
@@ -44,4 +40,3 @@ export default function WhyWilliam() {
     </Section>
   );
 }
-

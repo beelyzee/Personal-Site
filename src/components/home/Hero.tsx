@@ -1,57 +1,61 @@
+import Image from "next/image";
 import Link from "next/link";
+import { Star } from "lucide-react";
 
 import { SITE_CONFIG } from "@/data/site";
-import Section from "@/components/layout/Section";
-import BadgeRow from "@/components/shared/BadgeRow";
 import PhoneCTA from "@/components/shared/PhoneCTA";
 import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <Section className="pb-10 pt-16 md:pb-16 md:pt-20">
-      <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="space-y-7">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#8b6b4a]">
-            San Francisco Purchase Loans
-          </p>
-          <h1 className="max-w-2xl text-balance font-serif text-4xl leading-tight text-[#1f1f1f] md:text-6xl">
-            San Francisco Home Loans, Simplified
-          </h1>
-          <p className="max-w-xl text-lg leading-8 text-[#555]">
-            See what you may qualify for, then get direct guidance from a local loan officer who
-            understands San Francisco buyers and fast-moving offers.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild size="lg">
-              <Link href="#estimate" data-analytics-event="hero_cta_click">
-                {SITE_CONFIG.ctaLabels.startEstimate}
-              </Link>
-            </Button>
-            <PhoneCTA variant="outline" size="lg" />
-          </div>
-          <BadgeRow />
-        </div>
+    <section className="pb-10 pt-6 md:pb-14">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="relative min-h-[74vh] overflow-hidden rounded-[2rem] border border-[#d8ccba] shadow-[0_22px_44px_rgba(8,28,42,0.22)]">
+          <Image
+            src="/lombard-street.jpg"
+            alt="Lombard Street in San Francisco"
+            fill
+            priority
+            className="object-cover"
+          />
 
-        <aside className="rounded-3xl border border-[#ded3c3] bg-gradient-to-b from-[#fefbf4] to-white p-8 shadow-[0_20px_40px_rgba(13,58,79,0.08)]">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#8b6b4a]">
-            Local Focus
-          </p>
-          <h2 className="mt-3 font-serif text-2xl text-[#1f1f1f]">Based in Russian Hill</h2>
-          <p className="mt-3 text-sm leading-7 text-[#5b5b5b]">
-            William Zhang supports buyers across San Francisco with a clear financing strategy,
-            responsive communication, and numbers-driven guidance from first estimate to offer.
-          </p>
-          <div className="mt-6 rounded-2xl border border-[#e9decd] bg-[#fff9ef] p-4">
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#886445]">
-              Next Step
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071727de] via-[#0a2134ad] to-[#10273b4d]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#03060ab8] via-transparent to-transparent" />
+
+          <div className="relative z-10 flex min-h-[74vh] flex-col justify-end p-6 md:p-10">
+            <div className="mb-5 inline-flex w-fit items-center gap-3 rounded-full border border-white/30 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#0a3161]">
+              <span className="flex items-center gap-1">
+                <Star className="h-3.5 w-3.5 fill-current" />
+                <Star className="h-3.5 w-3.5 fill-current" />
+              </span>
+              <span className="h-1.5 w-5 rounded-full bg-[#b31942]" />
+              <span className="h-1.5 w-5 rounded-full bg-white ring-1 ring-[#d8d8d8]" />
+              <span className="h-1.5 w-5 rounded-full bg-[#b31942]" />
+              American Homeownership Focus
+            </div>
+
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#f2d2a4]">
+              5A Mortgage | San Francisco
             </p>
-            <p className="mt-1 text-sm text-[#4f4336]">
-              Start your quick buying power estimate and get a realistic range in minutes.
+            <h1 className="mt-3 max-w-3xl text-balance font-serif text-4xl leading-tight text-white md:text-6xl">
+              Secure your dream home today with us.
+            </h1>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-white/90 md:text-lg">
+              I&apos;m William Zhang. Let&apos;s map your buying power and move you toward an
+              offer-ready financing plan.
             </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button asChild size="lg" variant="secondary">
+                <Link href="#estimate" data-analytics-event="hero_cta_click">
+                  {SITE_CONFIG.ctaLabels.startEstimate}
+                </Link>
+              </Button>
+              <PhoneCTA variant="outline" size="lg" className="border-white bg-white/90 text-[#0a2236] hover:bg-white" />
+            </div>
           </div>
-        </aside>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }
-
