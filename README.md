@@ -38,12 +38,12 @@ npm run start
 
 1. Set environment variables:
 - `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (or `NEXT_PUBLIC_SUPABASE_ANON_KEY`)
 
 2. Create a `leads` table in Supabase with fields matching `LeadPayload` in `src/types/lead.ts`.
 
 3. Update `src/app/api/leads/route.ts`:
-- Replace the placeholder TODO with an actual insert using `createSupabaseServerClient` from `src/lib/supabase/server.ts`.
+- This route already inserts into Supabase using `createSupabaseServerClient` from `src/lib/supabase/server.ts`.
 
 4. Keep validation and API payload shape in sync:
 - `src/lib/validations/lead.ts`

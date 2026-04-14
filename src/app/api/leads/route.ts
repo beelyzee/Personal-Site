@@ -1,6 +1,6 @@
-import { randomUUID } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { leadSubmissionSchema } from "@/lib/validations/lead";
 
 export async function POST(request: NextRequest) {
@@ -24,19 +24,28 @@ export async function POST(request: NextRequest) {
       created_at: new Date().toISOString(),
     };
 
-    // TODO: Replace this placeholder with real Supabase insert logic.
-    // Example future flow:
-    // 1) create server client from "@/lib/supabase/server"
-    // 2) insert into "leads" table
-    // 3) return inserted row id or handle DB errors
-    const leadId = randomUUID();
+    const supabase = await createSupabaseServerClient();
+    const { data, error } = await supabase
+      .from("leads")
+      .insert(lead)
+      .select("id")
+      .single();
+
+    if (error) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: `Unable to store lead in Supabase: ${error.message}`,
+        },
+        { status: 500 },
+      );
+    }
 
     return NextResponse.json(
       {
         success: true,
         message: "Lead captured successfully.",
-        leadId,
-        lead,
+        leadId: data?.id ?? null,
       },
       { status: 201 },
     );
@@ -53,4 +62,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
