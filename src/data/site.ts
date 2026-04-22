@@ -36,8 +36,10 @@ export const SITE = {
     "UC San Diego",
   ],
   primaryNav: [
+    { href: "/", label: "Home" },
     { href: "/buy", label: "Buy" },
     { href: "/sell", label: "Sell" },
+    { href: "/neighborhoods", label: "Neighborhoods" },
     { href: "/resources", label: "Resources" },
     { href: "/about", label: "About" },
   ],
