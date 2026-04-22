@@ -12,7 +12,6 @@ import NeighborhoodCard from "@/components/shared/NeighborhoodCard";
 import TestimonialCard from "@/components/shared/TestimonialCard";
 import CtaBanner from "@/components/shared/CtaBanner";
 import StructuredData from "@/components/shared/StructuredData";
-import HeroPortrait from "@/components/shared/HeroPortrait";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -71,32 +70,29 @@ export default function HomePage() {
 
       <section className="relative overflow-hidden">
         <Image
-          src="/lombard-street.jpg"
-          alt="Lombard Street in San Francisco"
+          src="/golden-gate-sunrise.jpg"
+          alt="Golden Gate Bridge at sunrise"
           fill
           className="object-cover"
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,12,24,0.42)_0%,rgba(3,12,24,0.68)_38%,rgba(3,12,24,0.86)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(177,28,45,0.22),transparent_35%),radial-gradient(circle_at_88%_22%,rgba(48,85,138,0.22),transparent_32%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(92deg,rgba(6,21,37,0.86)_0%,rgba(6,21,37,0.63)_46%,rgba(6,21,37,0.45)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(230,163,89,0.24),transparent_32%),radial-gradient(circle_at_8%_40%,rgba(168,42,52,0.15),transparent_24%)]" />
 
-        <Container className="relative z-10 flex min-h-[72vh] flex-col items-center justify-center py-20 text-center sm:min-h-[78vh]">
-          <MotionReveal className="w-full max-w-4xl">
-            <div className="mx-auto mb-6 flex w-fit items-center gap-2 rounded-full border border-white/30 bg-[#0d2238]/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#dbe9f9] backdrop-blur">
-              <span className="text-[#c9d7ea]">*</span>
-              <span>Proudly Supporting U.S. Homeownership</span>
+        <Container className="relative z-10 flex min-h-[72vh] items-center py-20 sm:min-h-[78vh]">
+          <MotionReveal className="w-full max-w-3xl text-left">
+            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/30 bg-[#0d2238]/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#dbe9f9] backdrop-blur">
+              <span>Proudly supporting U.S. homeownership</span>
             </div>
 
-            <HeroPortrait name={SITE.shortName} />
-
-            <h1 className="mx-auto mt-7 max-w-4xl text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
-              {SITE.heroHeadline}
+            <h1 className="max-w-3xl text-balance text-5xl font-semibold leading-[1.05] text-white sm:text-6xl md:text-7xl">
+              Unlock SF Real Estate
             </h1>
-            <p className="mx-auto mt-4 max-w-3xl text-lg font-medium text-[#d9e7f7] sm:text-xl">
-              Secure your dream home today with us.
+            <p className="mt-5 max-w-2xl text-lg font-medium leading-8 text-[#d9e7f7] sm:text-2xl">
+              connect with William to achieve your property goals in the Golden City
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button asChild size="lg" className="bg-[#d4ac74] text-[#1b2230] hover:bg-[#e2bd89]">
                 <Link href="/book-consultation" data-analytics="hero-book-consultation-click">
                   {SITE.consultationCta}

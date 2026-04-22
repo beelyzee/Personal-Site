@@ -39,6 +39,7 @@ export const SITE = {
     { href: "/buy", label: "Buy" },
     { href: "/sell", label: "Sell" },
     { href: "/resources", label: "Resources" },
+    { href: "/about", label: "About" },
   ],
 } as const;
 
