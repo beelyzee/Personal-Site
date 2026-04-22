@@ -7,7 +7,6 @@ import { NEIGHBORHOODS } from "@/data/neighborhoods";
 import { TESTIMONIALS } from "@/data/testimonials";
 import Container from "@/components/layout/Container";
 import MotionReveal from "@/components/shared/MotionReveal";
-import TrustBar from "@/components/shared/TrustBar";
 import NeighborhoodCard from "@/components/shared/NeighborhoodCard";
 import TestimonialCard from "@/components/shared/TestimonialCard";
 import CtaBanner from "@/components/shared/CtaBanner";
@@ -80,17 +79,13 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[linear-gradient(92deg,rgba(6,21,37,0.86)_0%,rgba(6,21,37,0.63)_46%,rgba(6,21,37,0.45)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(230,163,89,0.24),transparent_32%),radial-gradient(circle_at_8%_40%,rgba(168,42,52,0.15),transparent_24%)]" />
 
-        <Container className="relative z-10 flex min-h-[72vh] items-center py-20 sm:min-h-[78vh]">
-          <MotionReveal className="w-full max-w-3xl text-left">
-            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/30 bg-[#0d2238]/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#dbe9f9] backdrop-blur">
-              <span>Proudly supporting U.S. homeownership</span>
-            </div>
-
+        <Container className="relative z-10 flex min-h-[72vh] items-center py-28 sm:min-h-[78vh] sm:py-32">
+          <MotionReveal className="w-full max-w-3xl text-left sm:pl-4 md:pl-8">
             <h1 className="max-w-3xl text-balance text-5xl font-semibold leading-[1.05] text-white sm:text-6xl md:text-7xl">
-              Unlock SF Real Estate
+              Unlock San Francisco Real Estate
             </h1>
             <p className="mt-5 max-w-2xl text-lg font-medium leading-8 text-[#d9e7f7] sm:text-2xl">
-              connect with William to achieve your property goals in the Golden City
+              Call today to achieve your property goals in the Golden City
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button asChild size="lg" className="bg-[#d4ac74] text-[#1b2230] hover:bg-[#e2bd89]">
@@ -112,8 +107,6 @@ export default function HomePage() {
           </MotionReveal>
         </Container>
       </section>
-
-      <TrustBar />
 
       <section className="py-16 sm:py-20">
         <Container>

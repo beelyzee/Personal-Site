@@ -14,7 +14,7 @@ export default function TopLogo({ name }: TopLogoProps) {
   return (
     <Link
       href="/"
-      className="justify-self-end overflow-hidden rounded-xl border border-[#3a536d] bg-[#10243d] p-2 shadow-[0_8px_20px_rgba(0,0,0,0.28)]"
+      className="justify-self-start overflow-hidden rounded-xl border border-white/30 bg-[#10243d]/80 p-2 shadow-[0_8px_20px_rgba(0,0,0,0.28)] backdrop-blur"
       aria-label={`${name} home`}
     >
       <div className="relative flex h-8 w-[104px] items-center justify-center rounded-md bg-[#10243d] text-sm font-semibold text-[#d7e7f7] sm:h-9 sm:w-[120px]">
