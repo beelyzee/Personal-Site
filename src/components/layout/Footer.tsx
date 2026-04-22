@@ -1,51 +1,64 @@
 import Link from "next/link";
 
-import { NAV_ITEMS, SITE_CONFIG } from "@/data/site";
-import QRCodeCard from "@/components/shared/QRCodeCard";
+import { SITE } from "@/data/site";
+import Container from "@/components/layout/Container";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#e5dccf] bg-[#f7f2e9]">
-      <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_1fr] lg:px-8">
-        <div className="space-y-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8b6b4a]">
-            {SITE_CONFIG.companyName}
+    <footer className="border-t border-[#dce5eb] bg-[#10243d] py-16 text-[#dfe8ee]">
+      <Container className="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d7c5a8]">
+            {SITE.name}
           </p>
-          <h2 className="font-serif text-2xl text-[#1f1f1f]">
-            Talk to a local San Francisco loan officer today.
+          <h2 className="mt-4 max-w-sm text-3xl text-white">
+            Premium strategy for San Francisco buyers and sellers.
           </h2>
-          <p className="max-w-xl text-sm leading-7 text-[#514636]">
-            {SITE_CONFIG.loanOfficerName} helps buyers evaluate purchasing power and move toward
-            offer-ready financing with clear, practical guidance.
+          <p className="mt-4 max-w-md leading-7 text-[#c5d0da]">
+            A polished, high-trust real-estate experience grounded in neighborhood knowledge,
+            pricing clarity, and responsive client service.
           </p>
-          <div className="flex flex-wrap items-center gap-4 text-sm">
-            <a href={`tel:${SITE_CONFIG.phoneTel}`} className="text-[#0d3a4f] underline-offset-4 hover:underline">
-              {SITE_CONFIG.phoneNumber}
-            </a>
-            <a href={`mailto:${SITE_CONFIG.contactEmail}`} className="text-[#0d3a4f] underline-offset-4 hover:underline">
-              {SITE_CONFIG.contactEmail}
-            </a>
-          </div>
-          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#514636]">
-            {NAV_ITEMS.map((item) => (
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#d7c5a8]">
+            Explore
+          </h3>
+          <ul className="mt-4 space-y-3 text-sm">
+            {SITE.primaryNav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="underline-offset-4 hover:text-[#0d3a4f] hover:underline">
+                <Link href={item.href} className="hover:text-white">
                   {item.label}
                 </Link>
               </li>
             ))}
           </ul>
-          <p className="text-xs text-[#5f5343]">
-            Service area: {SITE_CONFIG.serviceArea} | NMLS: {SITE_CONFIG.nmlsId} | DRE:{" "}
-            {SITE_CONFIG.dreId}
-          </p>
-          <p className="text-xs leading-6 text-[#5f5343]">{SITE_CONFIG.footerDisclaimer}</p>
         </div>
 
-        <div className="max-w-sm">
-          <QRCodeCard />
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#d7c5a8]">
+            Contact
+          </h3>
+          <div className="mt-4 space-y-3 text-sm">
+            <p>{SITE.phoneDisplay}</p>
+            <p>{SITE.email}</p>
+            <p>{SITE.serviceArea}</p>
+            <p className="leading-6 text-[#b9c7d1]">
+              {SITE.brokerageName}
+              <br />
+              {SITE.brokerageDisclosures}
+            </p>
+          </div>
+          <div className="mt-6 space-y-2 text-sm">
+            <Link href="/privacy-policy" className="block hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="block hover:text-white">
+              Terms / brokerage disclosures
+            </Link>
+          </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

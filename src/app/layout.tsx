@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 
-import { SITE_CONFIG } from "@/data/site";
+import { SITE } from "@/data/site";
+import StructuredData from "@/components/shared/StructuredData";
+import StickyMobileCTA from "@/components/shared/StickyMobileCTA";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
-import PhoneCTA from "@/components/shared/PhoneCTA";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -18,9 +19,12 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: SITE_CONFIG.siteName,
-  description:
-    "San Francisco purchase-loan guidance, buying power estimate, and direct support from loan officer William Zhang at 5A Mortgage.",
+  metadataBase: new URL(SITE.baseUrl),
+  title: {
+    default: SITE.title,
+    template: `%s | ${SITE.name}`,
+  },
+  description: SITE.description,
 };
 
 export default function RootLayout({
@@ -34,16 +38,29 @@ export default function RootLayout({
       className={`${manrope.variable} ${playfair.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <StructuredData
+          data={[
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: SITE.name,
+              url: SITE.baseUrl,
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "RealEstateAgent",
+              name: SITE.name,
+              areaServed: SITE.serviceArea,
+              telephone: SITE.phoneDisplay,
+              email: SITE.email,
+              url: SITE.baseUrl,
+            },
+          ]}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
-        <div className="fixed inset-x-4 bottom-4 z-50 md:hidden">
-          <PhoneCTA
-            label={`Call ${SITE_CONFIG.loanOfficerFirstName} Now`}
-            className="w-full"
-            analyticsEvent="phone_click_mobile_sticky"
-          />
-        </div>
+        <StickyMobileCTA />
       </body>
     </html>
   );

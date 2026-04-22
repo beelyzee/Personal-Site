@@ -1,80 +1,40 @@
-export type ResourceCategory =
-  | "Buying Basics"
-  | "Financing Strategy"
-  | "San Francisco Market";
+import { ResourceArticle } from "@/types";
 
-export type ResourceItem = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  category: ResourceCategory;
-  readTime: string;
-  featured?: boolean;
-};
-
-export const RESOURCES: ResourceItem[] = [
+export const RESOURCES: ResourceArticle[] = [
   {
-    slug: "sf-home-buying-process-step-by-step",
-    title: "San Francisco Home Buying Process: Step by Step",
+    slug: "san-francisco-buyers-roadmap",
+    title: "San Francisco Buyer Roadmap",
+    category: "Buying",
     excerpt:
-      "A simple walkthrough from early planning to accepted offer, financing, and closing in San Francisco.",
-    category: "Buying Basics",
+      "A practical overview of timelines, approvals, neighborhood shortlists, and how to prepare before you start touring.",
     readTime: "6 min read",
     featured: true,
+    downloadLabel: "Download Buyer Checklist",
   },
   {
-    slug: "how-mortgage-preapproval-works",
-    title: "How Mortgage Preapproval Works",
+    slug: "how-to-price-a-san-francisco-home",
+    title: "How to Price a San Francisco Home",
+    category: "Selling",
     excerpt:
-      "Understand what lenders review, what documents matter, and how to get offer-ready with confidence.",
-    category: "Financing Strategy",
+      "Pricing strategy basics, neighborhood comparables, and how sellers can balance momentum with long-term value.",
     readTime: "5 min read",
   },
   {
-    slug: "how-much-down-payment-should-you-have",
-    title: "How Much Down Payment Should You Have?",
+    slug: "choosing-the-right-neighborhood-in-sf",
+    title: "Choosing the Right Neighborhood in SF",
+    category: "Neighborhoods",
     excerpt:
-      "Compare tradeoffs between keeping cash reserves, monthly payment goals, and competitive offer strength.",
-    category: "Financing Strategy",
-    readTime: "5 min read",
-  },
-  {
-    slug: "mistakes-first-time-buyers-make",
-    title: "Common Mistakes First-Time Buyers Make",
-    excerpt:
-      "Avoid timing, budgeting, and documentation issues that can delay approval or weaken your offer.",
-    category: "Buying Basics",
+      "How buyers can evaluate lifestyle fit, commute, home type, and long-term tradeoffs across San Francisco neighborhoods.",
     readTime: "7 min read",
   },
   {
-    slug: "how-rates-affect-buying-power",
-    title: "How Rates Affect Buying Power",
+    slug: "market-timing-and-listing-prep",
+    title: "Market Timing and Listing Prep",
+    category: "Market",
     excerpt:
-      "A practical look at how interest rates shift monthly affordability and price range in real numbers.",
-    category: "Financing Strategy",
+      "What sellers should handle before launch, from presentation planning to photography and disclosure timing.",
     readTime: "4 min read",
+    downloadLabel: "Get Seller Prep Guide",
   },
-  {
-    slug: "making-an-offer-in-san-francisco",
-    title: "What to Know Before Making an Offer in SF",
-    excerpt:
-      "What buyers should prepare before offer day, including financing timing, contingencies, and communication.",
-    category: "San Francisco Market",
-    readTime: "6 min read",
-  },
-  {
-    slug: "condo-vs-tic-financing-san-francisco",
-    title: "Condo vs TIC Financing in San Francisco",
-    excerpt:
-      "Loan structure considerations and approval differences when evaluating condos and TIC properties in SF.",
-    category: "San Francisco Market",
-    readTime: "8 min read",
-  },
-];
-
-export const RESOURCE_CATEGORIES: ResourceCategory[] = [
-  "Buying Basics",
-  "Financing Strategy",
-  "San Francisco Market",
 ];
 

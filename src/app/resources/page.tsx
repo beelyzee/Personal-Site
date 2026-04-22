@@ -1,47 +1,57 @@
+import { buildMetadata } from "@/lib/metadata";
 import { RESOURCES } from "@/data/resources";
-import Section from "@/components/layout/Section";
-import ResourceCard from "@/components/resources/ResourceCard";
-import ResourceFilter from "@/components/resources/ResourceFilter";
+import Container from "@/components/layout/Container";
+import PageHero from "@/components/shared/PageHero";
+import MotionReveal from "@/components/shared/MotionReveal";
+import LeadForm from "@/components/forms/LeadForm";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export const metadata = buildMetadata({
+  title: "Resources and Blog",
+  description:
+    "San Francisco real-estate resources for buyers and sellers, including guides, market notes, and neighborhood planning content.",
+  path: "/resources",
+});
 
 export default function ResourcesPage() {
-  const featuredArticle = RESOURCES.find((item) => item.featured) ?? RESOURCES[0];
-
   return (
     <>
-      <Section className="pb-10 pt-16 md:pt-20">
-        <div className="max-w-3xl space-y-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8b6b4a]">
-            Buyer Education
-          </p>
-          <h1 className="text-balance font-serif text-4xl leading-tight text-[#1f1f1f] md:text-5xl">
-            San Francisco homebuyer resources
-          </h1>
-          <p className="text-lg leading-8 text-[#5b5b5b]">
-            Practical guides to help you understand financing, avoid mistakes, and move from
-            planning to offer with more confidence.
-          </p>
-        </div>
-      </Section>
+      <PageHero
+        eyebrow="Resources / Blog"
+        title="Useful guidance before your next move."
+        description="Explore practical content for San Francisco buyers and sellers, and request downloadable guides through the site."
+      />
+      <section className="py-16">
+        <Container className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="grid gap-6">
+            {RESOURCES.map((resource, index) => (
+              <MotionReveal key={resource.slug} delay={index * 0.05}>
+                <Card className="border-[#d7dfe7] bg-white">
+                  <CardHeader>
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#7c8e9f]">
+                      {resource.category}
+                    </p>
+                    <CardTitle className="text-2xl text-[#10243d]">{resource.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="leading-7 text-[#566374]">{resource.excerpt}</p>
+                    <p className="mt-3 text-sm text-[#7a8794]">{resource.readTime}</p>
+                  </CardContent>
+                </Card>
+              </MotionReveal>
+            ))}
+          </div>
 
-      <Section
-        eyebrow="Featured Article"
-        title={featuredArticle.title}
-        description={featuredArticle.excerpt}
-        className="bg-white/60 py-12"
-      >
-        <div className="max-w-2xl">
-          <ResourceCard item={featuredArticle} />
-        </div>
-      </Section>
-
-      <Section
-        id="resource-library"
-        eyebrow="Library"
-        title="Explore by topic"
-        description="Filter content by category and focus on what you need right now."
-      >
-        <ResourceFilter />
-      </Section>
+          <LeadForm
+            variant="download"
+            sourcePage="/resources"
+            title="Request a downloadable guide"
+            description="Tell us what you want and we’ll send the most relevant next-step resource."
+            submitLabel="Request guide"
+            interestType="Guide download"
+          />
+        </Container>
+      </section>
     </>
   );
 }

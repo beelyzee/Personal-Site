@@ -10,13 +10,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-[#0d3a4f] text-white shadow-sm hover:bg-[#114d68] focus-visible:ring-[#114d68]",
+          "bg-[#10243d] text-white shadow-sm hover:bg-[#173555] focus-visible:ring-[#173555]",
         secondary:
-          "bg-[#efe3cf] text-[#3b2a1d] hover:bg-[#e5d6bf] focus-visible:ring-[#8b6b4a]",
+          "bg-[#dccbaf] text-[#3c3327] hover:bg-[#d1bea1] focus-visible:ring-[#8b6b4a]",
         outline:
-          "border border-[#c9bba6] bg-white text-[#1f1f1f] hover:bg-[#f7f1e6] focus-visible:ring-[#8b6b4a]",
+          "border border-[#cdd7e0] bg-white text-[#10243d] hover:bg-[#f1f6f9] focus-visible:ring-[#536f88]",
         ghost:
-          "text-[#0d3a4f] hover:bg-[#e8f0f4] focus-visible:ring-[#114d68]",
+          "text-[#10243d] hover:bg-[#e8eef3] focus-visible:ring-[#173555]",
       },
       size: {
         default: "h-11 px-6",
@@ -54,4 +54,3 @@ function Button({
 }
 
 export { Button, buttonVariants };
-
