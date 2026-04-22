@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -10,13 +11,23 @@ import { Button } from "@/components/ui/button";
 export default function StickyMobileCTA() {
   const [visible, setVisible] = useState(false);
   const reduceMotion = useReducedMotion();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
+    if (isHome) {
+      return;
+    }
+
     const handleScroll = () => setVisible(window.scrollY > 280);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome]);
+
+  if (isHome) {
+    return null;
+  }
 
   if (!visible) {
     return null;
@@ -40,4 +51,3 @@ export default function StickyMobileCTA() {
     </motion.div>
   );
 }
-

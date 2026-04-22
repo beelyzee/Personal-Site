@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Manrope, Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 
 import { SITE } from "@/data/site";
 import StructuredData from "@/components/shared/StructuredData";
 import StickyMobileCTA from "@/components/shared/StickyMobileCTA";
 import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${playfair.variable} h-full scroll-smooth antialiased`}
+      className={`${inter.variable} ${cormorant.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <StructuredData

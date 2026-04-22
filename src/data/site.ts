@@ -12,6 +12,8 @@ export const SITE = {
   email: "CONTACT_EMAIL",
   consultationCta: "Book a Consultation",
   valuationCta: "Get Your Home Value",
+  dreId: "[INSERT_DRE]",
+  nmlsId: "[INSERT_NMLS]",
   serviceArea: "San Francisco, California",
   brokerageName: "BROKERAGE_NAME",
   brokerageDisclosures: "BROKERAGE_DISCLOSURES",
