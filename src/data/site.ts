@@ -1,7 +1,7 @@
 import { FAQItem } from "@/types";
 
 export const SITE = {
-  name: "William Zhang Real Estate",
+  name: "William Zhang | 5A Mortgage & Real Estate",
   shortName: "William Zhang",
   title: "San Francisco Real Estate Advisor | William Zhang",
   description:
@@ -15,23 +15,30 @@ export const SITE = {
   serviceArea: "San Francisco, California",
   brokerageName: "BROKERAGE_NAME",
   brokerageDisclosures: "BROKERAGE_DISCLOSURES",
-  heroHeadline: "A premium real-estate experience for San Francisco buyers and sellers.",
-  heroSubheadline:
-    "William Zhang helps clients navigate San Francisco neighborhoods, pricing strategy, and next-step decisions with clarity and calm confidence.",
+  heroHeadline: "William is your guide to navigating San Francisco real estate.",
+  heroSubheadline: "Secure your dream home today with trusted local strategy and direct support.",
   trustPoints: [
-    "San Francisco neighborhood expertise",
-    "Buyer and seller strategy",
-    "Responsive, concierge-level communication",
-    "Modern marketing and analytics",
+    "Local San Francisco expertise",
+    "Real estate + mortgage strategy",
+    "Clear and direct communication",
+    "Data-driven guidance",
+  ],
+  trustedClientLogos: [
+    "Qualcomm",
+    "Apple",
+    "Johnson & Johnson",
+    "U.S. Navy",
+    "U.S. Marines",
+    "Salk Institute",
+    "San Diego MTS",
+    "Meta",
+    "UCLA",
+    "UC San Diego",
   ],
   primaryNav: [
-    { href: "/", label: "Home" },
-    { href: "/buy", label: "Buy in SF" },
-    { href: "/sell", label: "Sell in SF" },
-    { href: "/neighborhoods", label: "Neighborhoods" },
+    { href: "/buy", label: "Buy" },
+    { href: "/sell", label: "Sell" },
     { href: "/resources", label: "Resources" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
   ],
 } as const;
 
@@ -52,4 +59,3 @@ export const HOME_FAQS: FAQItem[] = [
       "The site highlights neighborhoods like Noe Valley, Pacific Heights, Russian Hill, and the Sunset, while supporting broader San Francisco moves as well.",
   },
 ];
-

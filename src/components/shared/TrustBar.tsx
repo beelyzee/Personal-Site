@@ -4,12 +4,17 @@ import { SITE } from "@/data/site";
 
 export default function TrustBar() {
   return (
-    <section className="border-y border-[#dce4ea] bg-[#edf3f7]/70 py-4">
+    <section className="border-y border-[#1a2f49] bg-[#08182c] py-6">
       <Container>
-        <ul className="grid gap-3 text-sm text-[#314457] md:grid-cols-4">
-          {SITE.trustPoints.map((item, index) => (
+        <div className="mb-4 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9db5cd]">
+            Trusted by Clients Who Have Worked At
+          </p>
+        </div>
+        <ul className="grid grid-cols-2 gap-3 text-center text-xs font-semibold uppercase tracking-[0.07em] text-[#e6eef7] sm:grid-cols-3 md:grid-cols-5">
+          {SITE.trustedClientLogos.map((item, index) => (
             <MotionReveal key={item} delay={index * 0.05}>
-              <li className="rounded-full bg-white/70 px-4 py-3 text-center shadow-sm">
+              <li className="rounded-xl border border-[#2e4966] bg-[#10243d] px-3 py-3 shadow-[0_10px_24px_rgba(0,0,0,0.24)]">
                 {item}
               </li>
             </MotionReveal>
@@ -19,4 +24,3 @@ export default function TrustBar() {
     </section>
   );
 }
-
