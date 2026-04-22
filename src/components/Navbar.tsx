@@ -28,21 +28,15 @@ export default function Navbar() {
       }
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-5 py-5 sm:px-8 lg:px-12">
-        <Link href="/" className="flex min-w-0 items-center gap-4" aria-label="William Zhang Real Estate home">
-          <div className="flex h-12 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/6 backdrop-blur-md">
+        <Link href="/" className="block min-w-0" aria-label="William Zhang Real Estate home">
+          <div className="relative h-8 w-[220px] md:h-10 md:w-[280px] xl:h-12 xl:w-[340px]">
             <Image
-              src="/image.png"
-              alt="WZ logo"
-              width={84}
-              height={44}
-              className="max-h-8 w-auto object-contain"
+              src="/images/wz-logo-horizontal.png"
+              alt="William Zhang Real Estate"
+              fill
+              className="object-contain object-left"
               priority
             />
-          </div>
-          <div className="hidden min-w-0 sm:block">
-            <p className="truncate text-[11px] font-medium uppercase tracking-[0.34em] text-[#d3dee8]">
-              WILLIAM ZHANG REAL ESTATE
-            </p>
           </div>
         </Link>
 
