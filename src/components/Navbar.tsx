@@ -31,7 +31,7 @@ export default function Navbar() {
           : "sticky top-0 z-50 border-b border-[#dde5ec] bg-[#f5f2ec]/94 backdrop-blur-xl"
       }
     >
-      <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between px-5 py-5 sm:px-8 xl:px-12 2xl:px-16">
+      <div className="flex w-full items-center justify-between px-5 py-5 sm:px-8 xl:px-12 2xl:px-16">
         <Link href="/" className="block min-w-0" aria-label="William Zhang Real Estate home">
           <div className="relative h-8 w-[220px] md:h-10 md:w-[280px] xl:h-12 xl:w-[340px]">
             <Image
