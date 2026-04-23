@@ -3,13 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { Building2, House, KeyRound } from "lucide-react";
 
 import { SITE } from "@/data/site";
 
 const CTA_ITEMS = [
-  { href: "/buy", label: "Buy" },
-  { href: "/sell", label: "Sell" },
-  { href: "/book-consultation", label: "Financing" },
+  { href: "/buy", label: "Buy", icon: House },
+  { href: "/sell", label: "Sell", icon: KeyRound },
+  { href: "/book-consultation", label: "Financing", icon: Building2 },
 ];
 
 export default function HeroSection() {
@@ -61,15 +62,20 @@ export default function HeroSection() {
             </p>
 
             <div className="mt-10 grid gap-3 sm:grid-cols-3">
-              {CTA_ITEMS.map((item) => (
+              {CTA_ITEMS.map((item) => {
+                const Icon = item.icon;
+
+                return (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="inline-flex h-14 items-center justify-center rounded-full border border-white/18 bg-white/7 px-6 text-base font-medium text-[#f5f2ec] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[#9fc3ff]/60 hover:bg-white/11"
+                  className="inline-flex h-14 items-center justify-center gap-3 border border-white/70 bg-transparent px-6 text-base font-medium text-[#f5f2ec] transition-all duration-300 hover:border-[#9fc3ff] hover:bg-white/6"
                 >
+                  <Icon className="h-[18px] w-[18px] text-white" strokeWidth={2} />
                   {item.label}
                 </Link>
-              ))}
+                );
+              })}
             </div>
 
             <div className="mt-12 h-px w-full max-w-[540px] bg-gradient-to-r from-white/30 via-white/12 to-transparent" />
