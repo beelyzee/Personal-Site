@@ -40,12 +40,12 @@ export default function HeroSection() {
       <div className="absolute inset-0 shadow-[inset_0_0_180px_rgba(0,0,0,0.48)]" />
 
       <div className="relative z-10 flex min-h-screen items-center">
-        <div className="w-full max-w-[1600px] px-5 pb-16 pt-32 sm:px-8 lg:px-12 lg:pb-20 lg:pt-36">
+        <div className="w-full max-w-[1600px] px-5 pb-16 pt-32 sm:px-8 xl:px-12 2xl:px-16 lg:pb-20 lg:pt-36">
           <motion.div
             initial={prefersReducedMotion ? undefined : { opacity: 0, y: 28 }}
             animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
             transition={prefersReducedMotion ? undefined : { duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-[560px] sm:max-w-[640px] lg:ml-6 xl:ml-10"
+            className="max-w-[560px] sm:max-w-[640px]"
           >
             <p className="text-[12px] font-semibold uppercase tracking-[0.34em] text-[#9fc3ff]">
               FULL SERVICE REAL ESTATE
@@ -61,19 +61,23 @@ export default function HeroSection() {
               Combining financing and agent services to bring you the best deal
             </p>
 
-            <div className="mt-10 grid gap-3 sm:grid-cols-3">
-              {CTA_ITEMS.map((item) => {
+            <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-0">
+              {CTA_ITEMS.map((item, index) => {
                 const Icon = item.icon;
 
                 return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="inline-flex h-14 items-center justify-center gap-3 border border-white/70 bg-transparent px-6 text-base font-medium text-[#f5f2ec] transition-all duration-300 hover:border-[#9fc3ff] hover:bg-white/6"
-                >
-                  <Icon className="h-[18px] w-[18px] text-white" strokeWidth={2} />
-                  {item.label}
-                </Link>
+                  <div key={item.label} className="flex items-center">
+                    <Link
+                      href={item.href}
+                      className="inline-flex h-14 min-w-[168px] items-center justify-center gap-3 border border-white/70 bg-transparent px-5 text-base font-medium text-[#f5f2ec] transition-all duration-300 hover:border-[#9fc3ff] hover:bg-white/6 sm:min-w-[152px]"
+                    >
+                      <Icon className="h-[18px] w-[18px] text-white" strokeWidth={2} />
+                      {item.label}
+                    </Link>
+                    {index < CTA_ITEMS.length - 1 ? (
+                      <span className="mx-2 hidden h-6 w-px bg-white/70 sm:block" aria-hidden="true" />
+                    ) : null}
+                  </div>
                 );
               })}
             </div>
