@@ -27,7 +27,7 @@ export default function SellPage() {
           </Button>
         }
       />
-      <section className="py-16">
+      <section className="bg-[#f5f2ec] py-16">
         <Container className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-8">
             <section>
@@ -71,7 +71,7 @@ export default function SellPage() {
           </div>
         </Container>
       </section>
-      <section className="py-16">
+      <section className="bg-[#eef3f7] py-16">
         <Container className="max-w-4xl">
           <h2 className="text-3xl text-[#10243d]">Seller FAQ</h2>
           <div className="mt-6">
@@ -86,4 +86,3 @@ export default function SellPage() {
     </>
   );
 }
-
