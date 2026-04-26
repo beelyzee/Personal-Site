@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import { SITE } from "@/data/site";
 import HeroSection from "@/components/HeroSection";
+import HomeVisualSections from "@/components/HomeVisualSections";
 import StructuredData from "@/components/shared/StructuredData";
 
 export const metadata = buildMetadata({
@@ -24,6 +25,7 @@ export default function HomePage() {
         }}
       />
       <HeroSection />
+      <HomeVisualSections />
     </>
   );
 }
